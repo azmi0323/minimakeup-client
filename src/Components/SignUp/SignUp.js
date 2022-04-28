@@ -32,7 +32,7 @@ const SignUp = () => {
     if(emailUser){
       navigate(from, { replace: true });
     }
-  },[emailUser])
+  },[emailUser, from, navigate])
   useEffect(()=>{
     if(error2){
       console.log(error2);
