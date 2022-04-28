@@ -27,7 +27,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? "link-active" : "link"
                 }
-                to="/blogs"
+                to="/inventory"
               >
                 Inventory
               </NavLink>
@@ -35,7 +35,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? "link-active" : "link"
                 }
-                to="/services"
+                to="/contact"
               >
                 Contact
               </NavLink>
@@ -53,7 +53,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? "link-active" : "link"
                 }
-                to="/login"
+                to="/logIn"
               >
                 Login
               </NavLink>
