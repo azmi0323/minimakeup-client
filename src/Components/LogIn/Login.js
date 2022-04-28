@@ -49,7 +49,7 @@ const LogIn = () => {
   
 
   return (
-    <div className=" w-50 mx-auto ">
+    <div className=" w-50 mx-auto my-4">
       <form onSubmit={handleLogin} className="w-50 mx-auto">
         <h3 className="text-center text-success fw-bold pt-4">Please Login</h3>
         <label className="mt-3 text-success fw-bold" htmlFor="email">
