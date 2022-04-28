@@ -2,11 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import About from "./Components/About/About";
+import AddItems from "./Components/AddItems/AddItems";
 import Contact from "./Components/Contact/Contact";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Inventory from "./Components/Inventory/Inventory";
 import LogIn from "./Components/LogIn/LogIn";
+import ManageItems from "./Components/ManageItems/ManageItems";
+import MyItems from "./Components/MyItems/MyItems";
 import RequireAuth from "./Components/RequirAuth";
 import SignUp from "./Components/SignUp/SignUp";
 
@@ -20,6 +23,21 @@ function App() {
         <Route path="/inventory" element={
           <RequireAuth>
             <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path="/manageItems" element={
+          <RequireAuth>
+            <ManageItems></ManageItems>
+          </RequireAuth>
+        }></Route>
+        <Route path="/addItems" element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
+        <Route path="/myItems" element={
+          <RequireAuth>
+            <MyItems></MyItems>
           </RequireAuth>
         }></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>

@@ -6,9 +6,8 @@ import { signOut } from "firebase/auth";
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-
 const Header = () => {
-    const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
@@ -57,17 +56,57 @@ const Header = () => {
                 {user?.displayName && user.displayName}
               </span>
               {user ? (
-                <button
-                  className="btn fw-bold btn-danger ms-2"
-                  onClick={() => signOut(auth)}
-                >
-                  Sign Out
-                </button>
+                <div>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "link"
+                    }
+                    to="/manageItems"
+                  >
+                    Manage Items
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "link"
+                    }
+                    to="/AddItems"
+                  >
+                    Add Items
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "link"
+                    }
+                    to="/myItems"
+                  >
+                    My Items
+                  </NavLink>
+                  <button
+                    className="btn fw-bold btn-link link ms-2"
+                    onClick={() => signOut(auth)}
+                  >
+                    Sign Out
+                  </button>
+                </div>
               ) : (
                 <div>
-                  <NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/login">Login</NavLink>
-                  
-                  <NavLink className={({ isActive }) => (isActive ? "link-active" : "link")} to="/signUp">Sign Up</NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "link"
+                    }
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "link-active" : "link"
+                    }
+                    to="/signUp"
+                  >
+                    Sign Up
+                  </NavLink>
                 </div>
               )}
             </Nav>
