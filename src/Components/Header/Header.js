@@ -10,10 +10,10 @@ const Header = () => {
   const [user] = useAuthState(auth);
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <NavLink to="/">
-            <img src="" alt="Img hobe" />
+          <NavLink className={'footer-style'} to="/">
+          <h6 class="h1 text-white fw-bold ">Mini<span className='text-info'>Makeup</span></h6>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

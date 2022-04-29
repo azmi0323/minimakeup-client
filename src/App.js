@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "./App.css";
 import About from "./Components/About/About";
 import AddItems from "./Components/AddItems/AddItems";
 import Contact from "./Components/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Inventory from "./Components/Inventory/Inventory";
@@ -47,6 +47,7 @@ function App() {
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
