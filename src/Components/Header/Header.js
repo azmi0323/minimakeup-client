@@ -9,11 +9,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <div>
+    <div className="">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <NavLink className={'footer-style'} to="/">
-          <h6 class="h1 text-white fw-bold ">Mini<span className='text-info'>Makeup</span></h6>
+          <h6 class="h1 text-white fw-bold ">Mini<span className='text-info me-5'>Makeup</span></h6>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -82,7 +82,7 @@ const Header = () => {
                     My Items
                   </NavLink>
                   <button
-                    className="btn fw-bold btn-link link ms-2"
+                    className="btn btn-danger ms-3 fw-bold"
                     onClick={() => signOut(auth)}
                   >
                     Sign Out
