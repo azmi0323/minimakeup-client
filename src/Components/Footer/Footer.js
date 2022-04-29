@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import fb from "../../img/facebook.png";
+import insta from "../../img/instagram.png";
+import linkedin from "../../img/linkedIn2.png";
+import github from "../../img/github.png";
 const Footer = () => {
   return (
     <div className="bg-dark">
@@ -77,21 +81,17 @@ const Footer = () => {
             </div>
 
             <div class="col-lg-4 col-md-6">
-              <h5 class="text-white mb-3">Contact Us</h5>
+              <h5 class="text-white mb-3 text-center">Contact Us</h5>
               <ul className="text-white list-unstyled d-flex">
                 <li>
-                  facebook
+                  <img className="me-4" src={fb} alt="" />
                 </li>
-                <li>
-                  instagram
-                </li>
-                <li>
-                  linkedin
-                </li>
-                <li>
-                  github
-                </li>
+                <li><img className="me-4" src={insta} alt="" /></li>
+                <li><img className="me-4" src={linkedin} alt="" /></li>
+                <li><img className="me-4" src={github} alt="" /></li>
               </ul>
+              <h6 className="text-white mt-5">Email: <span className="text-info">azmihabib0323@gmail.com</span></h6>
+              <h6 className="text-white mt-3">Phone: <span className="text-info">+8801303823282, +00801765479719</span></h6>
             </div>
           </div>
           <p class="small my-5 text-center text-muted mb-0">
