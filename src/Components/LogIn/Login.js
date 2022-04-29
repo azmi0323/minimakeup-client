@@ -86,7 +86,7 @@ const LogIn = () => {
         </p>
         <p>
           Forget Password?{" "}
-          <span onClick={handleForgetPassword} className="text-danger pointer">
+          <span onClick={handleForgetPassword} className="text-danger">
           Reset Password
           </span>
         </p>

@@ -10,6 +10,7 @@ import Inventory from "./Components/Inventory/Inventory";
 import LogIn from "./Components/LogIn/LogIn";
 import ManageItems from "./Components/ManageItems/ManageItems";
 import MyItems from "./Components/MyItems/MyItems";
+import NotFound from "./Components/NotFound/NotFound";
 import RequireAuth from "./Components/RequirAuth";
 import SignUp from "./Components/SignUp/SignUp";
 
@@ -44,8 +45,8 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/logIn" element={<LogIn></LogIn>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
-      <ToastContainer></ToastContainer>
     </div>
   );
 }
