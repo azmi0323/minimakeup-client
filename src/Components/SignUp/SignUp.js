@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import bg from '../../img/bg.png'
 import auth from "../../firebase.init";
 import "./SignUp.css";
 const SignUp = () => {
@@ -46,13 +47,13 @@ const SignUp = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="row container">
-      <div className="col-lg-7">
-        <h2>Picture</h2>
+    <div className="row container mx-auto">
+      <div className="col-lg-8">
+      <img className="img-fluid mt-2" src={bg} alt="" />
       </div>
-      <div className="col-lg-5 form-container">
+      <div className="col-lg-4 my-5 px-5 py-3 form-container">
         <div className="  my-4">
-          <form onSubmit={handleCreateUser} className="w-50 mx-auto">
+          <form onSubmit={handleCreateUser} className=" mx-auto">
             <h3 className="text-center text-success fw-bold pt-4">
               Please Sign up
             </h3>
@@ -103,7 +104,7 @@ const SignUp = () => {
             </p>
 
             <input
-              className="login-btn d-block mx-auto mt-3"
+              className="input-btn d-block mx-auto mt-3"
               type="submit"
               value="Sign Up"
             />

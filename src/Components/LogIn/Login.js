@@ -7,7 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-
+import bg from '../../img/bg.png'
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,11 +45,13 @@ const LogIn = () => {
   };
 
   return (
-    <div className="row container ">
-      <div className="col-lg-7"><h2>Picture</h2></div>
-      <div className="col-lg-5 me-0 form-container">
-        <div className=" my-4">
-          <form onSubmit={handleLogin} className="w-50 mx-auto">
+    <div className="row container mx-auto">
+      <div className="col-lg-8">
+        <img className="img-fluid mt-2" src={bg} alt="" />
+      </div>
+      <div className="col-lg-4 my-5 px-5 py-3 me-0 form-container">
+        <div className="">
+          <form onSubmit={handleLogin} className=" mx-auto">
             <h3 className="text-center text-success fw-bold pt-4">
               Please Login
             </h3>
@@ -69,7 +71,7 @@ const LogIn = () => {
             </label>
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="w-100 "
+              className="w-100 input-field"
               type="password"
               name=""
               id=""
@@ -77,7 +79,7 @@ const LogIn = () => {
             />
 
             <p className="text-success fw-bold mt-3">
-              New at MiniMakeUp?{" "}
+              New at MiniMakeUp?
               <Link
                 className=" text-black rounded px-2 ms-2 fw-bold my-2 "
                 to="/signUp"
@@ -92,7 +94,7 @@ const LogIn = () => {
               </span>
             </p>
             <input
-              className="login-btn d-block mx-auto mt-3"
+              className=" input-btn d-block mx-auto mt-3"
               type="submit"
               value="Login"
             />
@@ -103,7 +105,7 @@ const LogIn = () => {
             </div>
             <button
               onClick={() => handleGoogleSignIn()}
-              className="mt-3 d-block mx-auto signIn-with-google-btn"
+              className="mt-3 d-block mx-auto glow-on-hover"
               type="button"
               value="SignIn With Google"
             >
