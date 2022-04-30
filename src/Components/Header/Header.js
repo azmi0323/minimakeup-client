@@ -12,8 +12,10 @@ const Header = () => {
     <div className="">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <NavLink className={'footer-style'} to="/">
-          <h6 class="h1 text-white fw-bold ">Mini<span className='text-info me-5'>Makeup</span></h6>
+          <NavLink className={"footer-style"} to="/">
+            <h6 className="h1 text-white fw-bold ">
+              Mini<span className="text-info me-5">Makeup</span>
+            </h6>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -52,9 +54,6 @@ const Header = () => {
               </NavLink>
             </Nav>
             <Nav>
-              <span className="fw-bold d-flex justify-content-center align-items-center text-info">
-                {user?.displayName && user.displayName}
-              </span>
               {user ? (
                 <div>
                   <NavLink
