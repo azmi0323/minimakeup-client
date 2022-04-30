@@ -23,9 +23,9 @@ const Products = (props) => {
           <Card.Footer>
             <Link to={`/checkOut/${id}`}
               
-              className="btn btn-warning fw-bold d-block w-100"
+              className="btn text-white  glow-on-hover pt-2  fw-bold d-block w-100"
             >
-              Book Now
+              Update Info
             </Link>
           </Card.Footer>
         </Card>
