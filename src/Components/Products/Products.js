@@ -15,9 +15,9 @@ const Products = ({product, setLoading}) => {
   };
 
   return (
-    <div className="user-card mt-5">
+    <div className="my-2">
       <CardGroup className="">
-        <Card className="">
+        <Card className="user-card">
           <Card.Img className="img-size" variant="top" src={img} />
           <Card.Body>
             <Card.Title className="text-success fw-bold fs-4">

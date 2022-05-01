@@ -1,14 +1,23 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
   const [products, setProducts] = useState([]);
+
+    
+  //   loading
+  const [loading, setLoading] = useState(false);
+
+
   useEffect(() => {
-    fetch("product.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+    axios("/products")
+      .then((res) => {
+        setProducts(res.data)
+        setLoading(false)
+      });
+  }, [loading]);
   return (
     <div>
       <h1 className="text-center mt-5 fw-bold">Stock <span className="text-info">Products</span></h1>

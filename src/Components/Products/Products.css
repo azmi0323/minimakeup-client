@@ -1,3 +1,12 @@
 .img-size{
     height: 200px;
+    border-radius: 10px;
+}
+.user-card{
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 11px 15px 19px -7px rgba(0,0,0,0.26);
+-webkit-box-shadow: 11px 15px 19px -7px rgba(0,0,0,0.26);
+-moz-box-shadow: 11px 15px 19px -7px rgba(0,0,0,0.26);
+    
 }

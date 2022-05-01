@@ -109,7 +109,7 @@ const AddItems = () => {
         <br />
 
         <button type="submit" className="mt-3 d-block mx-auto glow-on-hover">
-          submit
+          Add Item
         </button>
       </form>
       </div>

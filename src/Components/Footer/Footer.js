@@ -43,7 +43,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link className=" footer-style  mb-0" to="/about">
-                    about
+                    About
                   </Link>
                 </li>
                 <li>
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <h5 className="text-white mb-3 text-center">Contact Us</h5>
+              <h5 className="text-white mb-3 ">Contact Us</h5>
               <ul className="text-white list-unstyled d-flex">
                 <li>
                   <img className="me-2" src={fb} alt="" />
