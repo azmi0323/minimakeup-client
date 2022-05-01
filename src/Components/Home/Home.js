@@ -15,7 +15,7 @@ const Home = () => {
       <div className="container d-flex justify-content-center">
         <div className="card-compo ">
           {products.map((product,index) => (
-            index<3&&<Products key={product.id} product={product}></Products>
+            index<6&&<Products key={product.id} product={product}></Products>
           ))}
         </div>
         

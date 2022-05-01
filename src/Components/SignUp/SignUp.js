@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import bg from '../../img/bg.png'
+import bg from "../../img/bg.png";
 import auth from "../../firebase.init";
 import "./SignUp.css";
 const SignUp = () => {
@@ -49,7 +49,7 @@ const SignUp = () => {
   return (
     <div className="row container mx-auto">
       <div className="col-lg-8">
-      <img className="img-fluid mt-2" src={bg} alt="" />
+        <img className="img-fluid mt-2" src={bg} alt="" />
       </div>
       <div className="col-lg-4 my-5 px-5 py-3 form-container">
         <div className="  my-4">
