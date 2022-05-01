@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./Components/About/About";
 import AddItems from "./Components/AddItems/AddItems";
 import Contact from "./Components/Contact/Contact";
+import Details from "./Components/Details/Details";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
@@ -24,6 +25,11 @@ function App() {
         <Route path="/inventory" element={
           <RequireAuth>
             <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path="/details/:id" element={
+          <RequireAuth>
+            <Details></Details>
           </RequireAuth>
         }></Route>
         <Route path="/manageItems" element={
