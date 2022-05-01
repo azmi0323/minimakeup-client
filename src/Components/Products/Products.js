@@ -1,10 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Card, CardGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Products.css";
-const Products = (props) => {
-  const { img, name, body, id, price } = props.product;
+const Products = ({product, setLoading}) => {
+  const { _id, img, name, body, id, price } = product;
 
+
+  const handleRemove = () => {
+    axios.delete(`/product/${_id}`).then((res) => {
+      console.log(res.data);
+      setLoading(true)
+    });
+  };
 
   return (
     <div className="user-card mt-5">
@@ -21,8 +29,8 @@ const Products = (props) => {
             <Card.Text>{body}</Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Link to={`/details/${id}`}
-              
+            <Link
+              to={`/details/${id}`}
               className="btn text-white  glow-on-hover pt-2  fw-bold d-block w-100"
             >
               Update Info
@@ -30,6 +38,11 @@ const Products = (props) => {
           </Card.Footer>
         </Card>
       </CardGroup>
+
+      {/* not hare. it have to change */}
+      <button className="btn btn-danger" onClick={handleRemove}>
+        remove{" "}
+      </button>
     </div>
   );
 };

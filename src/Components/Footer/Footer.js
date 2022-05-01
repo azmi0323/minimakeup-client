@@ -7,7 +7,7 @@ import linkedin from "../../img/linkedIn2.png";
 import github from "../../img/github.png";
 const Footer = () => {
   return (
-    <div className="bg-dark">
+    <div className="bg-dark mt-auto">
       <footer className="w-100 py-4 flex-shrink-0">
         <div className="container py-4">
           <div className="row gy-4 gx-5">

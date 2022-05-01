@@ -1,4 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Route, Routes } from "react-router-dom"; 
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import About from "./Components/About/About";
 import AddItems from "./Components/AddItems/AddItems";
@@ -17,7 +19,7 @@ import SignUp from "./Components/SignUp/SignUp";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -54,6 +56,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

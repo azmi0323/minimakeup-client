@@ -1,5 +1,5 @@
 import "./LogIn.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -7,12 +7,14 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-import bg from '../../img/bg.png'
+import bg from "../../img/bg.png";
+import { Spinner } from "react-bootstrap";
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading] =
+    useSignInWithGoogle(auth);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state?.from?.pathname || "/";
@@ -27,18 +29,25 @@ const LogIn = () => {
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle().then(() => {
-      if (user) {
-        navigate(from, { replace: true });
-      }
-    });
+    signInWithGoogle();
   };
-  if (loading) {
-    return <p>Loading...</p>;
+
+  useEffect(() => {
+    if (user || googleUser) {
+      navigate(from, { replace: true });
+    }
+  }, [user, googleUser]);
+
+  if (loading || googleLoading) {
+    return (
+      <div className="middle_spinner">
+        <Spinner animation="border" variant="info" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+      </div>
+    );
   }
-  if (user) {
-    navigate(from, { replace: true });
-  }
+
   const handleForgetPassword = () => {
     sendPasswordResetEmail(email);
     alert("Email Sent to your account");
