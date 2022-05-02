@@ -27,7 +27,7 @@ const Inventory = () => {
       <div className="container d-flex justify-content-center">
         <div className="card-compo ">
           {products.map((product) => (
-            <Products key={product.id} setLoading={setLoading} product={product}></Products>
+            <Products key={product._id} setLoading={setLoading} product={product}></Products>
           ))}
         </div>
       </div>

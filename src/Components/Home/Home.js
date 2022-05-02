@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Products from "../Products/Products";
 import "./Home.css";
+import banner from '../../img/banner.png'
 const Home = () => {
   const [products, setProducts] = useState([]);
 
@@ -12,7 +13,7 @@ const Home = () => {
 
 
   useEffect(() => {
-    axios("/products")
+    axios.get("/products?limit=6")
       .then((res) => {
         setProducts(res.data)
         setLoading(false)
@@ -20,11 +21,14 @@ const Home = () => {
   }, [loading]);
   return (
     <div>
+      <div>
+        <img src={banner} className='img-fluid d-block' alt="" />
+      </div>
       <h1 className="text-center mt-5 fw-bold">Stock <span className="text-info">Products</span></h1>
       <div className="container d-flex justify-content-center">
         <div className="card-compo ">
-          {products.map((product,index) => (
-            index<6&&<Products key={product.id} product={product}></Products>
+          {products.map((product) => (
+            <Products key={product.id} product={product}></Products>
           ))}
         </div>
         

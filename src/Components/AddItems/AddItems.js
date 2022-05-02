@@ -9,8 +9,9 @@ const AddItems = () => {
   const [name, setName] = useState("");
   const [img, setImg] = useState("");
   const [body, setBody] = useState("");
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [supplier, setSupplier] = useState('');
 
 
   const handleSubmit = (event) => {
@@ -25,7 +26,8 @@ const AddItems = () => {
       body,
       price,
       quantity,
-      email: user.email,
+      supplier,
+      email: user.email
     };
 
     axios
@@ -38,7 +40,8 @@ const AddItems = () => {
   };
 
   return (
-    <div className="row container mx-auto">
+    <div className=" container mx-auto">
+        <div className="row">
         <div className="col-lg-8 justify-content-center align-items-center d-flex">
             <img className="img-fluid " src={addItem} alt="" />
         </div>
@@ -107,12 +110,25 @@ const AddItems = () => {
           onChange={(e) => setQuantity(e.target.value)}
         />
         <br />
+        <label htmlFor="productQuantity" className="mt-3 text-success fw-bold">Supplier Name: </label>
+          <br />
+        <input
+          type="name"
+          name="supplier"
+          id="supplier"
+          className="w-100 input-field"
+          required
+          value={supplier}
+          onChange={(e) => setSupplier(e.target.value)}
+        />
+        <br />
 
         <button type="submit" className="mt-3 d-block mx-auto glow-on-hover">
           Add Item
         </button>
       </form>
       </div>
+        </div>
     </div>
   );
 };
