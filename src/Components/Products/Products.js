@@ -7,12 +7,7 @@ const Products = ({product, setLoading}) => {
   const { _id, img, name, quantity, body, price,supplier } = product;
 
 
-  // const handleRemove = () => {
-  //   axios.delete(`/product/${_id}`).then((res) => {
-  //     console.log(res.data);
-  //     setLoading(true)
-  //   });
-  // };
+
 
   return (
     <div className="my-2">

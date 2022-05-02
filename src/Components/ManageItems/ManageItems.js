@@ -1,36 +1,61 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import axios from "axios";
+import './ManageItems.css'
+import React, { useEffect, useState } from "react";
+import { Spinner, Table } from "react-bootstrap";
+import dlt from '../../img/dlt.png';
 
 const ManageItems = () => {
+
+      
+  const [products, setProducts] = useState([]);
+  //   loading
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    axios.get("/products").then((res) => {
+      setProducts(res.data);
+      setLoading(false);
+    });
+  }, [loading]);
+
+  const handleRemove = (id) => {
+    axios.delete(`/product/${id}`).then((res) => {
+      console.log(res.data);
+      setLoading(true)
+    });
+  };
+  if(loading){
+      return (
+          <div className="spinner_">
+              <Spinner animation="border" variant="primary" />
+          </div>
+      )
+  }
   return (
     <div className="container mt-4">
       <Table bordered hover>
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Supplier Name</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {products.map((product) => (
+            <tr key={product._id}>
+              <td>{product.name}</td>
+              <td>{product.quantity}</td>
+              <td>{product.supplier}</td>
+              <td>
+                  <button 
+                  onClick={()=>handleRemove(product._id)}
+                  className="btn-dlt ">
+                    <img  src={dlt} alt="" />
+                  </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>

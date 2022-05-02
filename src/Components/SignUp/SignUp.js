@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import bg from "../../img/bg.png";
 import auth from "../../firebase.init";
 import "./SignUp.css";
+import { Spinner } from "react-bootstrap";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,7 +45,11 @@ const SignUp = () => {
   };
 
   if (emailLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="spinner_">
+          <Spinner animation="border" variant="primary" />
+      </div>
+  );
   }
   return (
     <div className="row container mx-auto">

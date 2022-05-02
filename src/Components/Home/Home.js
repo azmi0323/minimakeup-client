@@ -5,13 +5,9 @@ import Products from "../Products/Products";
 import "./Home.css";
 import banner from '../../img/banner.png'
 const Home = () => {
-  const [products, setProducts] = useState([]);
-
-    
+  const [products, setProducts] = useState([]);  
   //   loading
   const [loading, setLoading] = useState(false);
-
-
   useEffect(() => {
     axios.get("/products?limit=6")
       .then((res) => {
