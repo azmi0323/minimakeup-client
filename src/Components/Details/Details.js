@@ -14,7 +14,7 @@ const Details = () => {
           <div class="col-md-4 p-0 p-lg-4">
             <img
               src={products?.img}
-              className="img-fluid rounded-start"
+              className="img-fluid rounded-start mt-5"
               alt="..."
             />
           </div>
