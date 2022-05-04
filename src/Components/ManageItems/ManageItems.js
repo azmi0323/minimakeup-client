@@ -9,7 +9,7 @@ const ManageItems = () => {
       
   const [products, setProducts] = useState([]);
   //   loading
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios.get("/products").then((res) => {
       setProducts(res.data);
@@ -19,7 +19,6 @@ const ManageItems = () => {
 
   const handleRemove = (id) => {
     axios.delete(`/product/${id}`).then((res) => {
-      console.log(res.data);
       setLoading(true)
     });
   };
@@ -32,7 +31,7 @@ const ManageItems = () => {
   }
   return (
     <div className="container mt-4">
-      <Table bordered hover>
+      <Table bordered hover className="text-center">
         <thead>
           <tr>
             <th>Name</th>
