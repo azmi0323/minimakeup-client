@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Products from "../Products/Products";
 import "./Home.css";
-import banner from '../../img/banner.png'
 const Home = () => {
   const [products, setProducts] = useState([]);  
   //   loading
@@ -17,8 +16,8 @@ const Home = () => {
   }, [loading]);
   return (
     <div>
-      <div>
-        <img src={banner} className='img-fluid d-block' alt="" />
+      <div className="">
+        <h1>Heyy</h1>
       </div>
       <h1 className="text-center mt-5 fw-bold">Stock <span className="text-info">Products</span></h1>
       <div className="container d-flex justify-content-center">
