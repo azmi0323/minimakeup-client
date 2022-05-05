@@ -3,7 +3,19 @@
     grid-template-columns: repeat(3,1fr);
     gap: 50px;
 }
-
+.carousel-control-prev, .carousel-control-next , .carousel-indicators{
+    display: none;
+}
+.bannerSecond{
+    background-image: url('../../img/banner2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    
+}
 
 @media (max-width :768px)  {
     .card-compo{

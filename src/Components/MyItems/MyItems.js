@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 
 const MyItems = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const token = localStorage.getItem("token");
 
@@ -14,13 +15,19 @@ const MyItems = () => {
           Authorization: token,
         },
       })
-      .then((res) => setItems(res.data));
-  }, [token]);
+      .then((res) => {
+        setItems(res.data)
+        setLoading(false)
+      });
+  }, [token,loading]);
 
+  if(loading){
+      return <p>Loading</p>
+  }
   return (
     <div className="container">
         <div className="my-2  row row-cols-md-3">
-      {items.map((item) => (
+      { Array.isArray(items) && items?.map((item) => (
         <div  className="" key={item._id}>
           {
             <div className="col">

@@ -32,7 +32,6 @@ const AddItems = () => {
     axios
       .post("/products", postProduct)
       .then((res) => {
-        console.log(res.data);
         toast("add items successful");
       })
       .catch((error) => console.log(error));

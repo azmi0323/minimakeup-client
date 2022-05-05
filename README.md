@@ -4,6 +4,7 @@
 
 Live site link : https://assignment-eleven-project.web.app/
 Back-end API link : https://assignment-eleven.herokuapp.com/
+stackoverflow question link : https://stackoverflow.com/questions/72131884/why-module-build-failed-is-shows-to-my-react-app
 
 ## I use some fremwork and language in this projects
 #### React
