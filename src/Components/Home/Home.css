@@ -16,6 +16,9 @@
     align-items: center;
     
 }
+.img-resize{
+    border-radius: 100px;
+}
 
 @media (max-width :768px)  {
     .card-compo{

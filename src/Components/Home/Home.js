@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import carousel from "../../img/banner.png";
-import { Carousel } from "react-bootstrap";
+import { Card, Carousel, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import owner from "../../img/owner.png";
 import Products from "../Products/Products";
 import "./Home.css";
 const Home = () => {
@@ -41,15 +42,35 @@ const Home = () => {
         </div>
       </div>
       <p className="text-center ">
-        <Link className="btn btn-info text-white mt-4" to={"/inventory"}>
+        <Link className="btn btn-info text-white my-4" to={"/inventory"}>
           Check All Inventory
         </Link>
       </p>
-      <div className="bannerSecond">
+      <div className="bannerSecond py-5">
         <div className="container">
-        <h1>This is our Inventory products</h1>
-        <p>This is very good quality product. <br /> This website is only for the company employee. <br /> Here the employee can add product to the inventory.</p>
-        <Link to='/addItems' className="btn btn-success">Go to Add Product</Link>
+          <h1>This is our Inventory products</h1>
+          <p>
+            This is very good quality product. <br /> This website is only for
+            the company employee. <br /> Here the employee can add product to
+            the inventory.
+          </p>
+          <Link to="/addItems" className="btn btn-success ">
+            Go to Add Product
+          </Link>
+        </div>
+      </div>
+
+      <div className="container my-5">
+        <div className="row d-flex align-items-center justify-content-center">
+          <div className="col-md-6">
+            <img src={owner} className="img-resize img-fluid" alt="" />
+          </div>
+          <div className="col-md-6 mt-4">
+            <h2 className="text-info fw-bold">Know About Our Owner</h2>
+            <p className="text-small">
+              Our owner is a very dedicative person in the industry. Here we store product from the very first day of founding our company. Our MD sir always look after the company work. Every employ of the company should follow the company role. By following the rules we can make our company better and better.
+            </p>
+          </div>
         </div>
       </div>
     </div>
