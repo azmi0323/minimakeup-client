@@ -2,8 +2,8 @@
 
 ## Visit MiniMakeUp
 
-Live site link : http://localhost:3000
-Back-end API link : 
+Live site link : https://assignment-eleven-project.web.app/
+Back-end API link : https://assignment-eleven.herokuapp.com/
 
 ## I use some fremwork and language in this projects
 #### React
