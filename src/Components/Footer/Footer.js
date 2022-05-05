@@ -43,7 +43,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link className=" footer-style  mb-0" to="/about">
-                    About
+                    Blog
                   </Link>
                 </li>
                 <li>

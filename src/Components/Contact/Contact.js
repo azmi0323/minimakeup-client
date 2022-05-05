@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
-        <section className='px-4 py-5 mx-auto'>
+        <section className='px-4  py-5 mx-auto'>
       <div className='justify-contain-center align-items-center'>
         <h1 className=' fs-1 text-center '>
           Contact Us, Our Office Address Down Below

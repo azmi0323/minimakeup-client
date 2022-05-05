@@ -56,7 +56,7 @@ const Header = () => {
                 }
                 to="/about"
               >
-                About
+                Blog
               </NavLink>
             </Nav>
             <Nav>
