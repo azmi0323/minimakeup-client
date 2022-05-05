@@ -8,6 +8,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+    localStorage.removeItem('token')
+  };
+
   return (
     <div className="">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -82,7 +88,7 @@ const Header = () => {
                   </NavLink>
                   <button
                     className="btn btn-danger ms-3 fw-bold"
-                    onClick={() => signOut(auth)}
+                    onClick={handleSignOut}
                   >
                     Sign Out
                   </button>

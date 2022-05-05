@@ -1,5 +1,6 @@
 import "./LogIn.css";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -33,17 +34,30 @@ const LogIn = () => {
   };
 
   useEffect(() => {
-    if (user || googleUser) {
+    if (user) {
+      axios.post("/login", { email: user.user.email }).then((res) => {
+        localStorage.setItem("token", res.data.token);
+      });
       navigate(from, { replace: true });
     }
-  }, [user, googleUser]);
+  }, [user]);
+
+  useEffect(() => {
+    if (googleUser) {
+      axios.post("/login", { email: googleUser.user.email }).then((res) => {
+        localStorage.setItem("token", res.data.token);
+      });
+      navigate(from, { replace: true });
+    }
+  }, [googleUser]);
+
 
   if (loading || googleLoading) {
     return (
       <div className="middle_spinner">
         <Spinner animation="border" variant="info" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       </div>
     );
   }
