@@ -24,6 +24,9 @@ const Inventory = () => {
 
   return (
     <div>
+      <h1 className="text-center mt-5 fw-bold">
+        Stock <span className="text-info">Products</span>
+      </h1>
       <div className="container d-flex justify-content-center">
         <div className="card-compo ">
           {products.map((product) => (

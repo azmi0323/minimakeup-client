@@ -3,6 +3,7 @@ import './ManageItems.css'
 import React, { useEffect, useState } from "react";
 import { Spinner, Table } from "react-bootstrap";
 import dlt from '../../img/dlt.png';
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
 
@@ -57,6 +58,9 @@ const ManageItems = () => {
           ))}
         </tbody>
       </Table>
+      <p className="text-center">
+      <Link className="btn my-3 btn-info" to='/addItems'>Add New Items</Link>
+      </p>
     </div>
   );
 };
