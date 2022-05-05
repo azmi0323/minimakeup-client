@@ -16,6 +16,8 @@ import MyItems from "./Components/MyItems/MyItems";
 import NotFound from "./Components/NotFound/NotFound";
 import RequireAuth from "./Components/RequirAuth";
 import SignUp from "./Components/SignUp/SignUp";
+import BdAddress from "./Components/Contact/BdAddress";
+import UsaAddress from "./Components/Contact/UsaAddress";
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/logIn" element={<LogIn></LogIn>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
+        <Route path="/contact/bdAddress" element={<BdAddress></BdAddress>}></Route>
+        <Route path="/contact/usaAddress" element={<UsaAddress></UsaAddress>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

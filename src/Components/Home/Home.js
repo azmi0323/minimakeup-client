@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import carousel from "../../img/banner.png";
-import { Card, Carousel, Col, Row } from "react-bootstrap";
+import { Carousel} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import owner from "../../img/owner.png";
 import Products from "../Products/Products";
